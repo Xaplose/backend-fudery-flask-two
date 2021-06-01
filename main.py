@@ -1,20 +1,20 @@
 from flask import Flask, request
 import os, json
 
-import numpy as np
-
 app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
 def index():
-    data = {"status": 200, "data": "Füdery Nutrition Assistant"}
-    umur = {
-        "Anjar": 21,
-        "Tomi": 21,
-        "Roni": 22,
-        "Joni": 24,
+    data = {"foods": "nutrition", "data": "Füdery Nutrition Assistant"}
+    food = {
+        "Mie": "Carbohydrate",
+        "Omelete": "Protein",
+        "Fish": "Protein",
+        "Cereal": "Carbohydrate",
+        "Rice" : "Carbohydrate",
+        "Egg": "Protein",
     }
-    data["val_umur"] = umur
+    data["val_food"] = food
     return json.dumps(data)
 
 @app.route('/input/<int:id>', methods=['GET'])
