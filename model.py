@@ -44,8 +44,11 @@ def predict(data):
 
     rank = sorted_list[:3]
     json = {
-        str(rank[0][1]) : str(rank[0][0]*100),
-        str(rank[1][1]) : str(rank[1][0]*100),
-        str(rank[2][1]) : str(rank[2][0]*100)
+        'results' : [
+        {str(rank[0][1]) : str(rank[0][0]*100)},
+        {str(rank[1][1]) : str(rank[1][0]*100)},
+        {str(rank[2][1]) : str(rank[2][0]*100)}
+        ]
     }
+
     return json
