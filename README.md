@@ -1,1 +1,3 @@
-# backend-fudery-flask-two
+# Install Requirement
+
+pip install -r requirements.txt
