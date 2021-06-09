@@ -2,6 +2,8 @@ from flask import Flask, request
 from flask_cors import CORS
 from model import predict
 import json
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 UPLOAD_FOLDER = '/upload'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
