@@ -9,7 +9,7 @@ asgiref==3.2.7
 asn1crypto==0.24.0
 astor==0.8.1
 astroid==2.3.3
-attrs==19.3.0
+attrs==20.0
 auto-py-to-exe==2.6.6
 Babel==2.8.0
 backcall==0.1.0
