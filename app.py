@@ -28,4 +28,4 @@ def predict_images():
     else:
         prediction = predict(data)
 
-    return json.dumps(str(prediction))
+    return json.dumps(prediction)

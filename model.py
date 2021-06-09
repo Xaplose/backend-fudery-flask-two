@@ -27,9 +27,9 @@ def predict(data):
     processed_image = preprocess_image(img, target_size=(224, 224))
 
     images = np.vstack([processed_image])
-    classes = model.predict(images, batch_size=10)
-    label = np.where(classes[0] > 0.5, 1,0)
-    data = [
+    classes = model.predict(images)
+    # label = np.where(classes[0] > 0.5, 1,0)
+    label = [
         'bibimbap', "chicken_wings", "churros", "cup_cakes",
         "donuts","dumplings","edamame","fish_and_chips","french_fries",
         "fried_rice","frozen_yogurt", "hamburger","ice_cream","lasagna",
@@ -37,4 +37,15 @@ def predict(data):
         "pizza","ramen","spahetti_bolognese","spahetti_carbonara",
         "steak","takoyaki","waffles"
     ]
-    return str(label) + str(data)
+    label_with_predict = list()
+    for i in range(0,len(label)):
+        label_with_predict.append([classes[0][i],label[i]])
+    sorted_list = sorted(label_with_predict, key=lambda x: x[0], reverse=True)
+
+    rank = sorted_list[:3]
+    json = {
+        str(rank[0][1]) : str(rank[0][0]*100),
+        str(rank[1][1]) : str(rank[1][0]*100),
+        str(rank[2][1]) : str(rank[2][0]*100)
+    }
+    return json
