@@ -3,7 +3,6 @@ import base64
 import io
 import numpy as np
 from PIL import Image
-from keras.preprocessing import image
 
 model = tf.keras.models.load_model('image-classification-7.h5')
 model.compile(
@@ -17,7 +16,7 @@ def preprocess_image(img, target_size):
         img = img.convert("RGB")
     
     img = img.resize(target_size)
-    img = image.img_to_array(img)
+    img = tf.keras.preprocessing.image.img_to_array(img)
     img = np.expand_dims(img, axis=0)
     img = img/255
     return img
