@@ -17,3 +17,7 @@ git clone https://github.com/Xaplose/backend-fudery-flask-two.git
 $ pip install -r requirements.txt
 ```
 
+## Live Demo App
+```cmd
+https://www.youtube.com/watch?v=PNxizgOdaiA&ab_channel=AdhytiaWana
+```
